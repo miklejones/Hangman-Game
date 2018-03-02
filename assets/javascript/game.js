@@ -12,18 +12,43 @@ var blankWord = [];
 //Var for correct guess
 var hit = false;
 
-//Display random word
-//Create array of the random word
-//Count number of items within the array and add them to the blank array as underscores
-//display said array
 
+//Function to restart after win or loss
+function showBlanks() {
+
+    //Create array of the random word
+    var wordArray = Array.from(randWord);
+
+    //Count number of items within the array and add them to the blank array as underscores
+    var letterCount = wordArray.length;
+    for (i = 0; i < wordArray.length; i++) {
+        blankWord.push('_');
+    }
+    blankWord = blankWord.join(' ');
+
+    //display said array
+    document.getElementById("play-area").innerHTML = blankWord;
+}
+
+
+
+
+//Create array of the random word
+var wordArray = Array.from(randWord);
+//Count number of items within the array and add them to the blank array as underscores
+var letterCount = wordArray.length;
+for (i = 0; i < wordArray.length; i++) {
+    blankWord.push('_');
+}
+blankWord = blankWord.join(' ');
+//display said array
+document.getElementById("play-area").innerHTML = blankWord;
 
 //Logic to assign value to guess
 document.onkeyup = function (event) {
 
-    console.log(event);
     //Determind the guess
-    var userGuess = epigs.key.toLowerCase();
+    var userGuess = event.key.toLowerCase();
 
     //Logic for guessing a correct letter
     if (randWord.indexOf(userGuess) > -1) {
@@ -32,10 +57,4 @@ document.onkeyup = function (event) {
         console.log('Whoops');
     };
 
-
-
-};
-
-document.onkeydown = function (event) {
-    console.log(event);
 };
