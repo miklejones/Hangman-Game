@@ -7,6 +7,8 @@ var blankWordDisplay = "";
 var userGuess = "";
 var toReplace = 0;
 var wordArray = [];
+var audio = new Audio('assets/sounds/slurp.mp3');
+
 
 //Set variables for stats
 var wins = 0;
@@ -90,6 +92,7 @@ document.onkeyup = function (event) {
             console.log('guess more');
         } else {
             console.log('you win');
+            audio.play();
             wins++;
             //What if you beat the game
             if (wins > 9 && wins < 16) {
