@@ -1,0 +1,1 @@
+This project is a simple game of hang man. The goal is to guess the word display in all '_'.
