@@ -53,10 +53,8 @@ document.onkeyup = function (event) {
         guessedLetters.push("  " + userGuess);
         document.getElementById("guessed-letters").innerHTML = guessedLetters;
 
-
         //Logic for guessing a correct letter
         if (wordArray.indexOf(userGuess) > -1) {
-            console.log('Hell yeah');
             //locate  use of the letter
             toReplace = wordArray.indexOf(userGuess);
             //replace the letter
@@ -66,12 +64,10 @@ document.onkeyup = function (event) {
 
                 //begin check at next interval in array
                 if (wordArray.includes(userGuess, toReplace + 1) > 0) {
-                    console.log('whoopee');
                     toReplace = wordArray.indexOf(userGuess, toReplace + 1);
                     //replace the letter
                     blankWord.splice(toReplace, 1, userGuess);
                 } else {
-                    console.log('shit');
                 };
             }
 
@@ -81,7 +77,6 @@ document.onkeyup = function (event) {
 
             document.getElementById("play-area").innerHTML = blankWordShow;
         } else {
-            console.log('Whoops');
             guessesLeft--;
             document.getElementById("guesses-left").innerHTML = guessesLeft;
         };
@@ -89,9 +84,7 @@ document.onkeyup = function (event) {
 
         //What to do when you win
         if (blankWord.includes('_')) {
-            console.log('guess more');
         } else {
-            console.log('you win');
             audio.play();
             wins++;
             //What if you beat the game
