@@ -1,0 +1,19 @@
+body {
+    background-color: lightskyblue;
+}
+
+.main-title {
+    background-image: url(../images/bubs.png);
+    border-bottom: 3px solid darkgray;
+    color: lightyellow;
+    text-align: center;
+    font-size: 72px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+}
